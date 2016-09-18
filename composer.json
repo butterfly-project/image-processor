@@ -1,5 +1,5 @@
 {
-    "name": "butterfly/form",
+    "name": "butterfly/image-processor",
     "type": "library",
     "description": "Butterfly PHP. Image Processor Component",
     "keywords": ["Image"],
