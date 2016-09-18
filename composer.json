@@ -1,0 +1,28 @@
+{
+    "name": "butterfly/form",
+    "type": "library",
+    "description": "Butterfly PHP. Image Processor Component",
+    "keywords": ["Image"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marat Fakhertdinov",
+            "email": "marat.fakhertdinov@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "ext-imagick": "*",
+        "symfony/http-foundation": "*",
+        "imagine/imagine": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Butterfly\\Component\\ImageProcessor\\": "src/",
+            "Butterfly\\Component\\ImageProcessor\\Tests\\": "tests/unit/"
+        }
+    }
+}
