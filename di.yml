@@ -1,0 +1,3 @@
+services:
+  bfy.image_processor:
+    class: 'Butterfly\Component\ImageProcessor\ImageProcessor'
