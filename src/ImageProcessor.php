@@ -1,6 +1,6 @@
 <?php
 
-namespace app\components\image;
+namespace Butterfly\Component\ImageProcessor;
 
 use Imagine\Image;
 use Imagine\Imagick\Imagine;
