@@ -3,6 +3,7 @@
 namespace Butterfly\Component\ImageProcessor;
 
 use Imagine\Image;
+use Imagine\Image\ImageInterface;
 use Imagine\Imagick\Imagine;
 use Symfony\Component\HttpFoundation\File\File;
 
@@ -24,6 +25,7 @@ class ImageProcessor
         $imagine
             ->open($image->getRealPath())
             ->thumbnail($size, $mode)
+            ->interlace(ImageInterface::INTERLACE_PLANE)
             ->save($output);
 
         return new File($output);
@@ -45,6 +47,7 @@ class ImageProcessor
         $imagine
             ->open($image->getRealPath())
             ->thumbnail($size, $mode)
+            ->interlace(ImageInterface::INTERLACE_PLANE)
             ->save($output);
 
         return new File($output);
@@ -69,6 +72,7 @@ class ImageProcessor
             ->open($image->getRealPath())
             ->crop(new Image\Point($cropX, $cropY), new Image\Box($cropWidth, $cropHeight))
             ->resize(new Image\Box($width, $height))
+            ->interlace(ImageInterface::INTERLACE_PLANE)
             ->save($output);
 
         return new File($output);
@@ -85,6 +89,7 @@ class ImageProcessor
 
         $imagine
             ->open($image->getRealPath())
+            ->interlace(ImageInterface::INTERLACE_PLANE)
             ->save($output);
 
         return new File($output);
