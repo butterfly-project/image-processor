@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+0.3.0
+-----
+
+Changes:
+
+ * Added scale and rotation cropping
+
 0.2.0
 -----
 
