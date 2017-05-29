@@ -62,14 +62,28 @@ class ImageProcessor
      * @param int $cropHeight
      * @param int $width
      * @param int $height
+     * @param int $rotate
+     * @param bool $scaleX
+     * @param bool $scaleY
      * @return File
      */
-    public function crop(File $image, $output, $cropX, $cropY, $cropWidth, $cropHeight, $width, $height)
+    public function crop(File $image, $output, $cropX, $cropY, $cropWidth, $cropHeight, $width, $height, $rotate = 0, $scaleX = false, $scaleY = false)
     {
         $imagine = new Imagine();
 
-        $imagine
-            ->open($image->getRealPath())
+        $file = $imagine->open($image->getRealPath());
+
+        if ($rotate != 0) {
+            $file->rotate($rotate);
+        }
+        if ($scaleX) {
+            $file->flipHorizontally();
+        }
+        if ($scaleY) {
+            $file->flipVertically();
+        }
+
+        $file
             ->crop(new Image\Point($cropX, $cropY), new Image\Box($cropWidth, $cropHeight))
             ->resize(new Image\Box($width, $height))
             ->interlace(ImageInterface::INTERLACE_PLANE)
